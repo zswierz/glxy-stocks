@@ -1,6 +1,6 @@
 # GLXY STOCKS
 
-##### Also available at glxy.us/stocks
+#### Also available at **[glxy.us/stocks](glxy.us/stocks)**
 
 I made this simple stock viewer that allows you to see realtime prices for stocks.
 
@@ -8,10 +8,10 @@ I made this simple stock viewer that allows you to see realtime prices for stock
 It will glitch, it will break, it won't format right. Just don't use it on a small screen.
 
 ## Crypto price data is also available!
-Get live price data for almost any cryptocurrency at glxy.us/crypto
+Get live price data for almost any cryptocurrency at **[glxy.us/crypto](glxy.us/crypto)**
 
 ## Price API
-This website uses free API keys from [IEX CLoud](https://iexcloud.io).
+This website uses free API keys from **[IEX Cloud](https://iexcloud.io).**
 The website pings IEX every **2 seconds**, so it's not completely realtime.
 
-## Check out both these websites at glxy.us
+## Check out both these websites at **[glxy.us](glxy.us)**
