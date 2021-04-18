@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>		
+	 	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width">
+    	<title>GLXY Crypto Viewer</title>
+    	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    	<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="price.css?v=1.4.7">
+		<link rel="stylesheet" type="text/css" href="topbar.css?v=1.4.7">
+		<link rel="stylesheet" type="text/css" href="menus.css?v=1.4.7">
+		<link rel="stylesheet" type="text/css" href="prompts.css?v=1.4.7">
+		<script src="darkMode.js?v=1.4.7"></script>
+		<script src="searching.js?v=1.4.7"></script>
+		<script src="errorHandler.js?v=1.4.7"></script>
+		<script src="doOnLoad.js?v=1.4.7"></script>
+		<script src="settings.js?v=1.4.7"></script>
+		<script src="marketTime.js?v=1.4.7"></script>
+		<script src="priceUpdate.js?v=1.4.7"></script>
+		<script src="subPrice.js?v=1.4.7"></script>
+		<script src="autoPrompt.js?v=1.4.7"></script>
+		<script src="volume.js?v=1.4.7"></script>
+	</head>
+	<body class="darkMode" onload="startWeb()" style="transition-duration: 0.5s;overflow: hidden;overflow-x: hidden;">
+		<div id="stockPriceParent">
+			<h1 class="glitch darkModeReverse stockPrice">-</h1>
+			<h1 style="color: #00c805;" class="glitch stockPrice bgStockPrice" id="glitchTxt1">-</h1>
+      		<h1 style="color: #FF5000;" class="glitch stockPrice bgStockPrice" id="glitchTxt2">-</h1>
+			<p id="priceDifference"></p>
+		</div>
+		<div id="settings" class="darkModeReverse">
+			<div id="settingsLabelContainer1">
+				<p id="settingsDarkMode" class="darkModeTextNB">Dark Mode</p>
+				<p id="settingsVolume" class="darkModeTextNB">Show Volume</p>
+			</div>
+			<div id="darkModeToggleSwitch" onclick="toggleMode()" class="toggleSwitch darkModeBorder">
+				<div id="darkModeToggle" class="darkMode toggle"></div>
+			</div>
+			<div id="volumeToggleSwitch" onclick="toggleVolume()" class="toggleSwitch darkModeBorder">
+				<div id="volumeToggle" class="darkMode toggle"></div>
+			</div>
+		</div>
+		<div id="topBar">
+			<div id="settingsMenu" class="darkModeReverse topItem" onclick="toggleSettingsMenu()">
+				<span id="settingsIcon" class="material-icons darkModeTextNB">settings</span>
+			</div>
+			<div id="searchParent" class="darkModeReverse">
+				<img src="search.png" id="searchImg" width="20" height="20">
+				<input class="darkModeText" type="textarea" id="searchBox" placeholder="Search">
+				<div id="searchResult" class="darkModeReverse">
+					<div id="sResultFitL"><p id="searchResultStock" class="darkModeTextNB">AMC</p></div>
+					<div><p id="searchResultName" class="darkModeTextNB">AMC Entertainment Holdings Inc - Class A</p></div>
+				</div>
+			</div>
+		</div>
+		<div id="prompts">
+			<div id="marketStatusParent">
+				<div id="marketStatus" class="darkModeReverse">
+					<div id="priceUpdateIndicator"></div>
+					<div id="marketStatusFitL"><p id="currentMarket" class="darkModeTextNB">Market Status:</p></div>
+					<div><p id="updatedMarketStatus" class="darkModeTextNB"></p></div>
+				</div>
+			</div>
+			<div id="totalVolumeParent">
+				<div id="totalVolume" class="darkModeReverse">
+					<div id="totalVolumeFitL"><p id="currentVolume" class="darkModeTextNB">Average Volume:</p></div>
+					<div><p id="updatedVolume" class="darkModeTextNB">...</p></div>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="closed" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Heads up</b> - the market is currently <u>closed.</u> Live price updates are unavailable until pre-market (9:00 AM).</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="closed30" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Hey</b> - the market <u>closes</u> in 30 minutes.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="closed15" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>FYI</b> - the market <u>closes</u> in 15 minutes. Live price updates will be unavailable then.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="closed5" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Heads up</b> - the market <u>closes</u> in 5 minutes. Live price updates will be unavailable.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="pre" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Heads up</b> - it's currently <u>pre-market</u> hours, live price updates are available, but slower.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="pre30" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Good morning</b> - <u>pre-market</u> trading begins in 30 minutes.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="pre15" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Good morning</b> - <u>pre-market</u> trading begins in 15 minutes. Live price updates will be available.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="pre5" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Hey</b> - <u>pre-market</u> trading begins in 5 minutes. Live price updates will be available.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="after" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Heads up</b> - it's currently <u>after-hours</u>, live price updates are available, but slower.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="after30" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Hey</b> - markets enter <u>after-hours</u> trading in 30 minutes.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="after15" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Hello</b> - markets enter <u>after-hours</u> trading in 15 minutes.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="after5" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Heads up</b> - markets enter <u>after-hours</u> trading in 5 minutes. Live price updates will be slowed down.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="open" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Nice</b> - the market has <u>opened</u>. Live price updates are available.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="open15" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Hey</b> - the market <u>opens</u> in 15 minutes. Live price updates will be available then.</p>
+				</div>
+			</div>
+			<div class="marketParent">
+				<div id="open5" class="darkModeReverse marketWarning">
+					<p class="darkModeTextNB marketTxt"><b>Hey</b> - the market <u>opens</u> in 5 minutes. Live price updates will be available.</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

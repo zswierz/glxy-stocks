@@ -1,0 +1,23 @@
+.marketParent {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.marketWarning {
+	height: 50px;
+	padding-left: 15px;
+	padding-right: 15px;
+	position: absolute;
+	bottom: 0;
+	margin-bottom: -60px;
+	border-radius: 15px;
+	display: flex;
+	transition-duration: 0.5s;
+	justify-content: center;
+	align-items: center;
+}
+.marketTxt {
+	font-family: 'Roboto';
+	font-weight: 400;
+	font-size: 18px;
+}

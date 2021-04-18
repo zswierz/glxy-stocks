@@ -1,0 +1,91 @@
+#topBar {
+	left: 50%;
+   top: 3%;
+   -webkit-transform: translate(-50%, -25%);
+   transform: translate(-50%, -25%);
+	display: flex;
+	position: absolute;
+	justify-content: space-between;
+	transition-duration: 0.5s;
+}
+#searchParent {
+	position: relative;
+	border-radius: 15px;
+	padding: 10px;
+	width: 200px;
+	height: 23px;
+	margin-left: 25px;
+	font-family: 'Roboto';
+	transition-duration: 0.5s;
+}
+#searchBox {
+   height: 23px;
+   width: 120px;
+   outline: none;
+   border-style: hidden;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   font-size: 20px;
+   font-family: 'Roboto';
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   background-color: #000;
+   color: white;
+   transition-duration: 0.5s;
+}
+::placeholder {
+		font-family: 'Roboto';
+   	font-size: 20px;
+   	text-align: center;
+}
+.topItem {
+	font-family: 'Roboto';
+   font-size: 20px;
+	padding-top: 11.5px;
+	cursor: pointer;
+}
+.topItem:hover {
+	font-family: 'Roboto';
+   font-size: 20px;
+	font-weight: 600;
+	margin-left: 50px;
+	padding-top: 11.5px;
+	cursor: pointer;
+}
+#searchImg {
+	cursor: pointer;
+}
+#searchResult {
+	position: absolute;
+	transition-duration: 0.5s;
+	border-radius: 15px;
+	left: 50%;
+	transform: translate(-50%, -25%);
+   margin-top: 35px;
+   width: 500px;
+   height: 50px;
+	opacity: 0;
+   font-family: 'Roboto';
+	background-color: #000;
+}
+#searchResultStock {
+	font-family: 'Roboto';
+   font-size: 18px;
+	font-weight: 600;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+#searchResultName {
+	font-family: 'Roboto';
+   font-size: 18px;
+	font-weight: 400;
+	text-align: center;
+	margin-top: 15px;
+	width: 500px;
+}
+#sResultFitL {
+	width: 10%;
+	float: left;
+}

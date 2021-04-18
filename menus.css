@@ -1,0 +1,194 @@
+#settingsMenu {
+	width: 23px;
+	height: 23px;
+	border-radius: 15px;
+	z-index: 1;
+	padding: 10px;
+	margin-left: -30px;
+	transition-duration: 0.5s;
+	position: absolute;
+	opacity: 1;
+}
+#settingsMenu:hover {
+	width: 23px;
+	height: 23px;
+	border-radius: 15px;
+	z-index: 1;
+	padding: 10px;
+	margin-left: -30px;
+	transition-duration: 0.5s;
+	position: absolute;
+	opacity: 0.8;
+	transform-origin: center;
+}
+#settingsIcon {
+	z-index: 2;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	transition-duration: 0.5s;
+	position: relative;
+	opacity: 1;
+}
+#settingsIcon:hover {
+	z-index: 2;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 50%;
+	transform-origin: center center;
+	transition-duration: 0.5s;
+	position: relative;
+	opacity: 0.8;
+}
+#settings {
+	height: 100px;
+	width: 250px;
+	visibility: visible;
+	border-radius: 15px;
+	margin-top: 80px;
+	margin-left: 25px;
+	position: absolute;
+	transition-duration: 0.5s;
+	opacity: 0;
+}
+.toggleSwitch {
+	width: 35px;
+	height: 12.5px;
+	border-color: black;
+	border-radius: 30px;
+	position: relative;
+	border: 5px solid #000;
+	left: 75%;
+	margin-top: 20px;
+	transform: translate(-25%, 0%);
+}
+.toggle {
+	width: 6px;
+	height: 6px;
+	border-radius: 100px;
+	left: 25%;
+	top: 50%;
+	position: relative;
+	transform: translate(-75%, -50%);
+	transition-duration: 0.5s;
+}
+#settingsDarkMode {
+	font-family: 'Roboto';
+	font-size: 18px;
+	font-weight: 500;
+	margin-left: 15px;
+	margin-top: 20px;
+}
+#settingsVolume {
+	font-family: 'Roboto';
+	font-size: 18px;
+	font-weight: 500;
+	margin-left: 15px;
+	white-space: nowrap;
+}
+#settingsLabelContainer1 {
+	width: 50%;
+	float: left;
+}
+#marketStatusParent {
+	display: flex;
+	align-items: flex-end;
+}
+#totalVolumeParent {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+#marketStatus {
+	height: 50px;
+	border-radius: 15px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin-bottom: 25px;
+	margin-left: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: flex;
+	align-items: center;
+}
+#totalVolume {
+	height: 50px;
+	border-radius: 15px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 25px;
+	margin-right: 20px;
+	padding-left: 10px;
+	padding-right: 10px;
+	display: flex;
+	align-items: center;
+	transition-duration: 0.5s;
+}
+#currentMarket {
+	font-size: 18px;
+	font-weight: 500;
+	font-family: 'Roboto';
+	text-align: center;
+	white-space: nowrap;
+	margin-left: 25px;
+}
+#currentVolume {
+	font-size: 18px;
+	font-weight: 500;
+	font-family: 'Roboto';
+	text-align: center;
+	white-space: nowrap;
+}
+#marketStatusFitL {
+	width: 80%;
+	float: left;
+}
+#totalVolumeFitL {
+	width: 80%;
+	float: left;
+}
+#updatedMarketStatus {
+	font-family: 'Roboto';
+	font-size: 18px;
+	font-weight: 900;
+	margin-left: 10px;
+	white-space: nowrap;
+}
+#updatedVolume {
+	font-family: 'Roboto';
+	font-size: 18px;
+	font-weight: 900;
+	margin-left: 10px;
+	white-space: nowrap;
+}
+#priceUpdateIndicator {
+    border-radius: 100px;
+    width: 10px;
+    height: 10px;
+    background-color: #00c805;
+    position: absolute;
+    top: 40%;
+    transform: translate(0, -40%);
+    z-index: 2;
+    margin-left: 5px;
+    animation: radiate 1s infinite;
+	animation-play-state: paused;
+}
+@keyframes radiate {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 200, 5, 0.7)
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 200, 5, 0)
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 200, 5, 0)
+  }
+}
